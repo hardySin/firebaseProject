@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/mycoordinator"
+    tools:context=".fragment_class.profile_setting">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/id_toolbar_container"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:fitsSystemWindows="true"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        tools:ignore="MissingConstraints">
+
+        <include
+            android:id="@+id/toolbar2"
+            layout="@layout/toolbar"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/enable"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/thumbnail"
+            android:transitionName="imageTransition"
+            android:layout_width="204dp"
+            android:layout_height="198dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="68dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/men"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.038"
+            tools:ignore="MissingConstraints" />
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/takeImage"
+            android:layout_width="61dp"
+
+            android:layout_height="53dp"
+            android:layout_marginStart="8dp"
+            android:elevation="4dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/camera"
+            app:civ_border_color="@color/cardview_light_background"
+            app:civ_border_width="2dp"
+            app:civ_circle_background_color="@color/cardview_light_background"
+            app:layout_constraintBottom_toBottomOf="@+id/thumbnail"
+            app:layout_constraintEnd_toEndOf="@+id/thumbnail"
+            app:layout_constraintHorizontal_bias="0.84"
+            app:layout_constraintStart_toStartOf="@+id/thumbnail"
+            app:layout_constraintTop_toTopOf="@+id/thumbnail"
+            app:layout_constraintVertical_bias="1.0"
+            tools:ignore="MissingConstraints" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/setting_recycler"
+
+            android:layout_width="match_parent"
+            android:layout_height="532dp"
+            android:layout_alignTop="@+id/thumbnail"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="28dp"
+            android:scrollbars="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/thumbnail"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="-2dp">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <include layout="@layout/update_setting" />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
